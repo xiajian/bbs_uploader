@@ -1,8 +1,8 @@
 # BbsUploader
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bbs_uploader`. To experiment with that code, run `bin/console` for an interactive prompt.
+源自每周的分享: http://bbs.yundianjia.net/d/111-2-ruby-gem。 
 
-TODO: Delete this and the text above, and describe your gem
+BbsUploader 是上传图片到七牛云的简单 demo，用来演示，如何编写一个 gem。 
 
 ## Installation
 
@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+
 
 ## Development
 
