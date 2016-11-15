@@ -22,8 +22,43 @@ Or install it yourself as:
 
 ## Usage
 
+**命令行使用:**
 
+使用指南： 
 
+```
+Usage: bbs_uploader [options]
+    -i, --input-file [file]          Default: xxx.jpg
+    -h, --help                       Show this message
+    -v, --version                    Print version
+```
+
+调用实例： 
+
+```
+bbs_uploader ~/Downloads/test.jpg
+D, [2016-11-15T16:31:52.906672 #30130] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+图片上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
+```
+
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
+
+**编程使用:** 
+
+```
+BbsUploader.qiniu = {
+  access_key: 'your access key',
+  secret_key: 'your secret key',
+  bucket: "your bucket",
+  bucket_domain: "your application domain"
+}
+
+BbsUploader.upload_image '~/Downloads/test.jpg'
+```
+
+然后，就祝你安好！！！
 
 ## Development
 
