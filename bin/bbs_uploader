@@ -45,4 +45,4 @@ if options[:input_file].nil?
   end
 end
 
-BbsUploader.upload_image options[:input_file]
+BbsUploader.upload_file options[:input_file]

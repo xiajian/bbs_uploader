@@ -5,6 +5,14 @@ module BbsUploader
   # Your code goes here...
   IMAGE_URL_REGEXP = /http:\/\/.*[jpg|png|jpeg]$/
 
+  IMAGE_FILE_REGEXP = /.*[jpg|png|jpeg|gif|bmp]$/
+
+  module FileType
+    IMAGE = 'image'.freeze
+
+    FILE = 'file'.freeze
+  end
+
   class << self
     @@qiniu = {}
 
@@ -26,12 +34,16 @@ module BbsUploader
       }.merge(options)
     end
 
-    def upload_image(file_path)
-      # 构建鉴权对象
+    def upload_file(file_path, file_type = FileType::FILE)
       Qiniu.establish_connection! access_key: self.qiniu[:access_key],
                                   secret_key: self.qiniu[:secret_key]
 
-      key = "bbs_image/#{File.basename(file_path)}"
+      key = if file_type == FileType::FILE
+              "bbs_file/#{File.basename(file_path)}"
+            elsif file_type == FileType::IMAGE
+              "bbs_image/#{File.basename(file_path)}"
+            end
+
       put_policy = Qiniu::Auth::PutPolicy.new(
           self.qiniu[:bucket], # 存储空间
           key, # 指定上传的资源名，如果传入 nil，就表示不指定资源名，将使用默认的资源名
@@ -50,20 +62,32 @@ module BbsUploader
       )
 
       if code == 200
-        image_url = "http://#{self.qiniu[:bucket_domain]}/#{result['key']}"
+        file_url = "http://#{self.qiniu[:bucket_domain]}/#{result['key']}"
 
-        puts "图片上传成功! \n链接为: #{image_url} \nmarkdown 链接: #{markdown_image_link(image_url)}"
+        puts "上传成功! \n链接为: #{file_url}"
 
-        image_url
+        file_url
       else
-        puts '上传图片失败'
+        puts '上传文件失败'
 
         nil
       end
     rescue => e
-      puts "上传图片发生异常: #{e}"
+      puts "上传发生异常: #{e}"
 
       nil
+    end
+
+    def upload_image(file_path)
+      if file_path =~ IMAGE_FILE_REGEXP
+        image_url = upload_file file_path, FileType::IMAGE
+
+        puts "\nmarkdown 链接: #{markdown_image_link(image_url)}"
+
+        image_url
+      else
+        puts '不是图片文件，请选择重新选择！！'
+      end
     end
 
     def markdown_image_link(image_url)

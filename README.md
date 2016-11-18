@@ -56,9 +56,12 @@ BbsUploader.qiniu = {
 }
 
 BbsUploader.upload_image '~/Downloads/test.jpg'
+BbsUploader.upload_file '~/Downloads/install.php'
 ```
 
 然后，就祝你安好！！！
+
+PS: 思考 网盘以及 CDN 在部署的上区别。
 
 ## Development
 
