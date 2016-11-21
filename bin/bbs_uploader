@@ -21,12 +21,7 @@ OptionParser.new do |opts|
     exit
   end
 
-  opts.on('-i', '--input-file [file]', 'Default: xxx.jpg') do |file|
-    unless File.exist? file
-      puts "输入的文件 #{file} 不存在，请检查后重试"
-      exit
-    end
-
+  opts.on('-i', '--input-file [file]', 'Input file can be URL, image file or other file') do |file|
     options[:input_file] = File.absolute_path file
   end
 end.parse!
@@ -34,15 +29,12 @@ end.parse!
 if options[:input_file].nil?
   file = ARGV[0]
 
-  if !file.nil? && File.exists?(file)
-    options[:input_file] = File.absolute_path file
-  elsif !file.nil?
-    puts "输入的文件 #{ARGV[0]} 不存在，请检查后重试"
-    exit
-  elsif file.nil?
-    puts "没有选择上传的图片"
-    exit
+  if file.nil?
+   puts "没有选择上传的文件"
+   exit
   end
+
+  options[:input_file] = file
 end
 
-BbsUploader.upload_file options[:input_file]
+BbsUploader.upload options[:input_file]

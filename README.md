@@ -28,7 +28,7 @@ Or install it yourself as:
 
 ```
 Usage: bbs_uploader [options]
-    -i, --input-file [file]          Default: xxx.jpg
+    -i, --input-file [file]          Input file can be URL, image file or other file
     -h, --help                       Show this message
     -v, --version                    Print version
 ```
@@ -36,11 +36,20 @@ Usage: bbs_uploader [options]
 调用实例： 
 
 ```
-bbs_uploader ~/Downloads/test.jpg
+$ bbs_uploader ~/Downloads/test.jpg
 D, [2016-11-15T16:31:52.906672 #30130] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
 图片上传成功!
 链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg
 markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
+
+$ bin/bbs_uploader http://xiajian.github.io/assets/images/dongxiang.png
+下载文件的地址: http://xiajian.github.io/assets/images/dongxiang.png
+/tmp/dongxiang.png
+D, [2016-11-21T09:57:43.758140 #49294] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png
+
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
 ```
 
 ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
@@ -55,13 +64,18 @@ BbsUploader.qiniu = {
   bucket_domain: "your application domain"
 }
 
+# 超集方法：可以上传任意的文件
+BbsUploader.upload '~/Downloads/test.jpg'
+BbsUploader.upload 'http://xiajian.github.io/assets/images/dongxiang.png'
+
 BbsUploader.upload_image '~/Downloads/test.jpg'
 BbsUploader.upload_file '~/Downloads/install.php'
+
 ```
 
 然后，就祝你安好！！！
 
-PS: 思考 网盘以及 CDN 在部署的上区别。
+> PS: 思考 网盘以及 CDN 在部署的上区别。 CDN 内容分发，网盘就是云存储。 这就不明白，SB！！
 
 ## Development
 
@@ -71,10 +85,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bbs_uploader. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/xiajian/bbs_uploader. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

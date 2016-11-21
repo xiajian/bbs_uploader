@@ -1,5 +1,7 @@
 require "qiniu"
+require "open-uri"                # 下载文件
 require "bbs_uploader/version"
+require "bbs_uploader/ruby_regex"
 
 module BbsUploader
   # Your code goes here...
@@ -32,6 +34,38 @@ module BbsUploader
           bucket: "bss-image",
           bucket_domain: "ognvcf5x6.bkt.clouddn.com"
       }.merge(options)
+    end
+
+    # 下载文件 - 依赖本地的 tmp 目录, 需要 `open-uri`
+    #
+    # 参考: http://stackoverflow.com/questions/2263540/how-do-i-download-a-binary-file-over-http
+    #
+    # @param {String} url - 网络上的 URL 地址
+    # @param {String} file_path - 下载指定的文件路径地址
+    #
+    # @return {String} file_path - 文件在当前系统的中的路径
+    def download(url, file_path = '')
+      puts "下载文件的地址: #{url}"
+
+      if file_path == ''.freeze
+        file_path = "/tmp/#{url.scan(/.*\/([^\/]*)/).flatten[0]}"
+      end
+
+      if File.exist? file_path
+        `rm -rf #{file_path}`
+      end
+
+      File.open(file_path, 'wb') do |saved_file|
+        open(url, 'rb') do |read_file|
+          saved_file.write(read_file.read)
+        end
+      end
+
+      file_path
+    rescue => e
+      puts "下载文件发生异常: #{e}"
+
+      ''
     end
 
     def upload_file(file_path, file_type = FileType::FILE)
@@ -82,11 +116,31 @@ module BbsUploader
       if file_path =~ IMAGE_FILE_REGEXP
         image_url = upload_file file_path, FileType::IMAGE
 
-        puts "\nmarkdown 链接: #{markdown_image_link(image_url)}"
+        puts "markdown 链接: #{markdown_image_link(image_url)}"
 
         image_url
       else
         puts '不是图片文件，请选择重新选择！！'
+      end
+    end
+
+    def upload(resource = '')
+      if resource =~ RubyRegex::URL
+        file_path = download resource
+
+        if file_path =~ IMAGE_FILE_REGEXP
+          upload_image file_path
+        end
+      elsif File.exist? resource
+        file_path = File.absolute_path(resource)
+
+        if resource =~ IMAGE_FILE_REGEXP
+          upload_image file_path
+        else
+          upload_file file_path
+        end
+      else
+        puts "输入的文件 #{resource} 不存在，请检查后重试"
       end
     end
 
