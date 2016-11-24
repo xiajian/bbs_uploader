@@ -29,6 +29,8 @@ Or install it yourself as:
 ```
 Usage: bbs_uploader [options]
     -i, --input-file [file]          Input file can be URL, image file or other file
+    -d [directory],                  Input directory must be a directory
+        --input-directory
     -h, --help                       Show this message
     -v, --version                    Print version
 ```
@@ -74,11 +76,20 @@ BbsUploader.upload 'http://xiajian.github.io/assets/images/dongxiang.png'
 
 BbsUploader.upload_image '~/Downloads/test.jpg'
 BbsUploader.upload_file '~/Downloads/install.php'
+
+# 添加将整个目录按照自然的顺序上传上去
+
 ```
 
 然后，就祝君安好！！！
 
 > PS: 思考 网盘以及 CDN 在部署的上区别。 CDN 内容分发，网盘就是云存储。 这就不明白，SB！！ 上传的 js 以及 css 文件，直接下载获取，不如 专业的 cdn 资源的获取的速度快，所以，专业的 CDN 系统还是有特殊的优化处理的。
+
+## 后续开发
+
+1. 可以添加一个全局配置七牛的 key 以及相关的功能， 配置文件，可以放在 `~/.bbs_uploader` 中，文件的解析，可以参考 dotenv 中关于文件的解析方法(`Parser`)。
+2. 可能需要添加新的 qiniu sdk 的接口的调用。
+
 
 ## Development
 
