@@ -150,18 +150,25 @@ module BbsUploader
     end
     
     def upload_with_directory(dir = '')
+      dir = `cd #{dir}; pwd`.chomp
       return unless File.exists?(dir) && File.directory?(dir)
       
-      files = `ls #{dir}`.split('\n').map { |filename| "#{dir}/#{filename}" }
+      puts "上传目录: #{dir}"
       
-      files.map { |file| upload(file) }
+      files = `ls #{dir}`.split("\n").map { |filename| "#{dir}/#{filename}" }
+      
+      file_links = files.map { |file| upload(file) }
+      
+      puts "生成的图片的链接: #{file_links.join('\n')}"
+      
+      file_links
     end
 
     def markdown_image_link(image_url)
       if image_url && image_url.is_a?(String) && IMAGE_URL_REGEXP.match(image_url)
         "![](#{image_url})"
       else
-        ''
+        image_url
       end
     end
 
@@ -171,9 +178,18 @@ module BbsUploader
     def generate_markdown_format(dir)
       content = upload_with_directory(dir).map { |link| markdown_image_link(link) }.join("\n")
         
+      puts "上传链接地址: \n"
       puts content
 
       content
+    end
+    
+    def command(options = {})
+      if options[:input_file]
+        upload options[:input_file]
+      elsif options[:input_directory]
+        generate_markdown_format options[:input_directory]
+      end
     end
   end
 end

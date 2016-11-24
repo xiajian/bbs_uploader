@@ -24,17 +24,25 @@ OptionParser.new do |opts|
   opts.on('-i', '--input-file [file]', 'Input file can be URL, image file or other file') do |file|
     options[:input_file] = File.absolute_path file
   end
+  
+  opts.on('-d', '--input-directory [directory]', 'Input directory must be a directory') do |dir|
+    options[:input_directory] = File.absolute_path file
+  end
 end.parse!
 
-if options[:input_file].nil?
+if options[:input_file].nil? || options[:input_directory].nil?
   file = ARGV[0]
 
   if file.nil?
-   puts "没有选择上传的文件"
+   puts "没有选择上传的文件或目录"
    exit
   end
-
-  options[:input_file] = file
+  
+  if File.directory?(File.absolute_path(file))
+    options[:input_directory] = file
+  else
+    options[:input_file] = file
+  end
 end
 
-BbsUploader.upload options[:input_file]
+BbsUploader.command options

@@ -54,11 +54,13 @@ markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
 
 ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
 
+
 ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
 
 **编程使用:** 
 
 ```
+# 选项传递的 Hash 值可以是任意形态的，实现中利用 hashie 抹平了差异
 BbsUploader.qiniu = {
   access_key: 'your access key',
   secret_key: 'your secret key',
@@ -72,12 +74,11 @@ BbsUploader.upload 'http://xiajian.github.io/assets/images/dongxiang.png'
 
 BbsUploader.upload_image '~/Downloads/test.jpg'
 BbsUploader.upload_file '~/Downloads/install.php'
-
 ```
 
-然后，就祝你安好！！！
+然后，就祝君安好！！！
 
-> PS: 思考 网盘以及 CDN 在部署的上区别。 CDN 内容分发，网盘就是云存储。 这就不明白，SB！！
+> PS: 思考 网盘以及 CDN 在部署的上区别。 CDN 内容分发，网盘就是云存储。 这就不明白，SB！！ 上传的 js 以及 css 文件，直接下载获取，不如 专业的 cdn 资源的获取的速度快，所以，专业的 CDN 系统还是有特殊的优化处理的。
 
 ## Development
 
