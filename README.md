@@ -54,6 +54,8 @@ markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
 
 ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
 
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
+
 **编程使用:** 
 
 ```

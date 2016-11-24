@@ -1,5 +1,6 @@
 require "qiniu"
 require "open-uri"                # 下载文件
+require 'hashie'
 require "bbs_uploader/version"
 require "bbs_uploader/ruby_regex"
 
@@ -28,12 +29,14 @@ module BbsUploader
     end
 
     def default_options(options = {})
-      {
+      options = Hashie::Mash.new(options)
+      
+      Hashie::Mash.new({
           access_key: "79WvzAxvV-nOEX7m0PERzwR0Lhm-FDHriz2-QdAN",
           secret_key: "4wwnWNU16n9uVK8DHRW6qO61b2gls3aSduHswkvc",
           bucket: "bss-image",
           bucket_domain: "ognvcf5x6.bkt.clouddn.com"
-      }.merge(options)
+      }).merge(options)
     end
 
     # 下载文件 - 依赖本地的 tmp 目录, 需要 `open-uri`
@@ -130,6 +133,8 @@ module BbsUploader
 
         if file_path =~ IMAGE_FILE_REGEXP
           upload_image file_path
+        else
+          upload_file file_path
         end
       elsif File.exist? resource
         file_path = File.absolute_path(resource)
@@ -142,6 +147,14 @@ module BbsUploader
       else
         puts "输入的文件 #{resource} 不存在，请检查后重试"
       end
+    end
+    
+    def upload_with_directory(dir = '')
+      return unless File.exists?(dir) && File.directory?(dir)
+      
+      files = `ls #{dir}`.split('\n').map { |filename| "#{dir}/#{filename}" }
+      
+      files.map { |file| upload(file) }
     end
 
     def markdown_image_link(image_url)
@@ -156,15 +169,8 @@ module BbsUploader
     #
     # @note 注意文件需要按照文件目录的自然顺序
     def generate_markdown_format(dir)
-      content = ''
-      files = []
-
-      `ls #{dir}`.split('\n').map { |filename| files << "#{dir}/#{filename}" }
-
-      files.each do |file|
-        content <<  markdown_image_link(upload_image(file)) + "\n"
-      end
-
+      content = upload_with_directory(dir).map { |link| markdown_image_link(link) }.join("\n")
+        
       puts content
 
       content
