@@ -52,6 +52,72 @@ D, [2016-11-21T09:57:43.758140 #49294] DEBUG -- : Query bss-image hosts Success:
 链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png
 
 markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/dongxiang.png)
+
+$ bin/bbs_uploader ~/Downloads/pi
+bbs_uploader ~/Downloads/pi
+上传目录: /Users/xiajian/Downloads/pi
+D, [2016-11-25T11:10:33.153753 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.001.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.001.jpeg)
+D, [2016-11-25T11:10:33.718394 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.002.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.002.jpeg)
+D, [2016-11-25T11:10:33.866917 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.003.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.003.jpeg)
+D, [2016-11-25T11:10:34.111550 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.004.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.004.jpeg)
+D, [2016-11-25T11:10:34.344260 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.005.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.005.jpeg)
+D, [2016-11-25T11:10:34.590605 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.006.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.006.jpeg)
+D, [2016-11-25T11:10:34.804324 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.007.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.007.jpeg)
+D, [2016-11-25T11:10:35.049650 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.008.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.008.jpeg)
+D, [2016-11-25T11:10:35.285335 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.009.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.009.jpeg)
+D, [2016-11-25T11:10:35.523276 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.010.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.010.jpeg)
+D, [2016-11-25T11:10:35.807353 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.011.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.011.jpeg)
+D, [2016-11-25T11:10:36.077758 #23592] DEBUG -- : Query bss-image hosts Success: {"ttl"=>86400, "http"=>{"io"=>["http://iovip.qbox.me"], "up"=>["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.136.139.16"]}, "https"=>{"io"=>["https://iovip.qbox.me"], "up"=>["https://up.qbox.me"]}}
+上传成功!
+链接为: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.012.jpeg
+markdown 链接: ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.012.jpeg)
+生成的图片的链接: http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.001.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.002.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.003.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.004.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.005.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.006.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.007.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.008.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.009.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.010.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.011.jpeg\nhttp://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.012.jpeg
+上传链接地址:
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.001.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.002.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.003.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.004.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.005.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.006.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.007.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.008.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.009.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.010.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.011.jpeg)
+![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/pi.012.jpeg)
 ```
 
 ![](http://ognvcf5x6.bkt.clouddn.com/bbs_image/test.jpg)
@@ -78,7 +144,7 @@ BbsUploader.upload_image '~/Downloads/test.jpg'
 BbsUploader.upload_file '~/Downloads/install.php'
 
 # 添加将整个目录按照自然的顺序上传上去
-
+BbsUploader.upload_with_directory '~/Downloads/pi'
 ```
 
 然后，就祝君安好！！！
@@ -89,6 +155,7 @@ BbsUploader.upload_file '~/Downloads/install.php'
 
 1. 可以添加一个全局配置七牛的 key 以及相关的功能， 配置文件，可以放在 `~/.bbs_uploader` 中，文件的解析，可以参考 dotenv 中关于文件的解析方法(`Parser`)。
 2. 可能需要添加新的 qiniu sdk 的接口的调用。
+3. 控制日志输出的等级
 
 
 ## Development
