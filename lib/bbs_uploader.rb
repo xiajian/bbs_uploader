@@ -103,7 +103,11 @@ module BbsUploader
 
         puts "上传成功! \n链接为: #{file_url}"
 
-        URI.encode file_url
+        encode_url = URI.encode file_url
+
+        puts "编码后的链接: #{encode_url}"
+
+        encode_url
       else
         puts '上传文件失败'
 
