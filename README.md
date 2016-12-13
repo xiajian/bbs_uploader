@@ -19,6 +19,17 @@ And then execute:
 Or install it yourself as:
 
     $ gem install bbs_uploader
+    
+或者单独安装: 
+
+```
+\curl -sSL https://get.rvm.io | bash -s stable # 安装 rvm，ubuntu/centos 上的 ruby 版本太老
+source /etc/profile.d/rvm.sh   # 运行 rvm.sh 的脚本 
+rvm install 2.3.1
+rvm 2.3.1  --default
+gem install bundler
+gem install bbs_uploader # gem 的创建时通过 bundler 创建的
+```
 
 ## Usage
 
